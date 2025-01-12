@@ -1,0 +1,91 @@
+@use 'variables' as v;
+@use 'base/mixins' as m;
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: v.$body-font;
+    font-size: v.$normal-font-size;
+    line-height: 1.8;
+    background-color: v.$background;
+    color: v.$black;
+}
+
+h1, h2, h3, h4 {
+    color: v.$blue-3;
+    font-weight: 700;
+    font-family: v.$heading-font;
+    
+    //reset again
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-size: v.$h1-font-size;
+}
+h2 {
+    font-size: v.$h2-font-size;
+    line-height: 4.5rem;
+}
+h3 {
+    font-size: v.$h3-font-size;
+}
+h4 {
+    font-size: v.$h4-font-size;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: v.$white;
+}
+
+img,
+picture {
+    width: 100%;
+    display: block;
+}
+
+fieldset {
+    padding: 0;
+    margin: 0;
+}
+
+
+/*==== REUSABLE CSS CLASSES ====*/
+.contenedor {
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
+
+    @include m.phone {
+        width: 98%;
+    }
+}
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.w100 {
+    width: 100%;
+}
+
