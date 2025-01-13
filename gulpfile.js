@@ -1,77 +1,77 @@
-import path from 'path';
-import fs from 'fs';
-import { glob } from 'glob';
+import path from 'path'
+import fs from 'fs'
+import { glob } from 'glob'
 
-import { src, dest, watch, series } from 'gulp';
-import sass from 'sass'; // Directamente importamos 'sass' ahora
-import gulpSass from 'gulp-sass'; // Usamos gulp-sass con la nueva API
+import { src, dest, watch, series } from 'gulp'
+import * as sass from 'sass'  // Directamente importamos 'sass' ahora
+import gulpSass from 'gulp-sass'  // Usamos gulp-sass con la nueva API
 
-const sassCompiler = gulpSass(sass); // Pasamos 'sass' a gulp-sass para usar la nueva API
+const sassCompiler = gulpSass(sass)  // Pasamos 'sass' a gulp-sass para usar la nueva API
 
-import terser from 'gulp-terser';
-import sharp from 'sharp';
+import terser from 'gulp-terser'
+import sharp from 'sharp'
 
 export function js(done) {
     src('src/js/app.js')
         .pipe(terser()) /* terser mimifica el codigo de JS */
-        .pipe(dest('build/js'));
+        .pipe(dest('build/js'))
 
-    done();
+    done()
 }
 
 export function languages(done) {
     src('src/languages/*.json')
-        .pipe(dest('build/languages'));
-    done();
+        .pipe(dest('build/languages'))
+    done()
 }
 
 export function svg(done) {
     src('src/img/*.svg')
-        .pipe(dest('build/img'));
-    done();
+        .pipe(dest('build/img'))
+    done()
 }
 
 export function css(done) {
     src('src/scss/app.scss', { sourcemaps: true })
         .pipe(sassCompiler({ outputStyle: 'compressed' }).on('error', sassCompiler.logError)) 
-        .pipe(dest('build/css', { sourcemaps: '.' }));
+        .pipe(dest('build/css', { sourcemaps: '.' }))
 
     done();
 }
 
 export async function crop(done) {
-    const inputFolder = 'src/img/gallery/full';
+    const inputFolder = 'src/img/gallery/full'
     const outputFolder = 'src/img/gallery/thumb';
     // aquí recorta las imágenes
     const width = 250;
     const height = 180;
     if (!fs.existsSync(outputFolder)) { //verifica que exista thumb sino crea la carpeta 
-        fs.mkdirSync(outputFolder, { recursive: true });
+        fs.mkdirSync(outputFolder, { recursive: true })
     }
     const images = fs.readdirSync(inputFolder).filter(file => {
         return /\.(jpg)$/i.test(path.extname(file)); //revisa que sean imagenes para empezar a procesarlas
     });
     try {
         images.forEach(file => { //empieza a procesar las imagenes 
-            const inputFile = path.join(inputFolder, file);
-            const outputFile = path.join(outputFolder, file);
+            const inputFile = path.join(inputFolder, file)
+            const outputFile = path.join(outputFolder, file)
             sharp(inputFile)
                 .resize(width, height, {
                     position: 'centre'
                 })
-                .toFile(outputFile); //lo almacena en la carpeta 
+                .toFile(outputFile) //lo almacena en la carpeta 
         });
 
-        done();
+        done()
     } catch (error) {
-        console.log(error);
+        console.log(error)
     }
 }
 
 export async function imagenes(done) {  //webp
     const srcDir = './src/img';
     const buildDir = './build/img';
-    const images = await glob('./src/img/**/*.{jpg,png}');
+    const images = await glob('./src/img/**/*.{jpg,png}')
 
     images.forEach(file => {
         const relativePath = path.relative(srcDir, path.dirname(file));
@@ -117,9 +117,12 @@ function procesarImagenes(file, outputSubDir) {
 }
 
 export function dev() {
-    watch('src/scss/**/*.scss', css);
-    watch('src/js/**/*.js', js);
-    watch('src/img/**/*.{png,jpg}', imagenes);
+    watch('src/scss/**/*.scss', css)
+    watch('src/js/**/*.js', js)
+    watch('src/img/**/*.{png,jpg}', imagenes)
 }
 
-export default series(js, css, dev);
+/* export default series (crop, js, css, svg, languages, imagenes, dev) */
+/* export default series(js, css, svg, videos, imagenes, dev) */
+/* export default series(js, css, svg, imagenes, dev) */
+export default series(js, css, dev)
