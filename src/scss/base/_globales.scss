@@ -17,12 +17,12 @@ body {
     font-family: v.$body-font;
     font-size: v.$normal-font-size;
     line-height: 1.8;
-    background-color: v.$background;
+    background-color: v.$white;
     color: v.$black;
 }
 
 h1, h2, h3, h4 {
-    color: v.$blue-3;
+    color: v.$black;
     font-weight: 700;
     font-family: v.$heading-font;
     

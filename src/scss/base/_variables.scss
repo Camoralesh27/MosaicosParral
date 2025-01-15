@@ -1,9 +1,10 @@
 // FUENTE
     /* Google fonts */
-    @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
-    $heading-font: "Rubik", sans-serif;
-    $body-font :  "Work Sans", sans-serif;
+
+    $heading-font: "Rubik", serif;
+    $body-font :  "Roboto", serif;
 
 //FONT SIZE
     $h1-font-size: 7.2rem;
@@ -26,23 +27,25 @@
     $desktop: 1400px;
 
  // COLORS 
-    $yellow-1: #FFD368;
+    $yellow-1: #FFCB4D;
     $yellow-2: #FFB400;
-    $yellow-3: #E19F00;
-    $blue-1: #4690DC;
-    $blue-2: #13589F;
-    $blue-3: #09427B;
-    $brown-1: #ADA091;
-    $brown-2: #7F766B;
-    $brown-3: #514F4E;
-    $gray-1: #909998;
-    $gray-2: #5C6766;
-    $gray-3: #353D3D;
+    $yellow-3: #D99900;
+    $green-1: #BCD6C3;
+    $green-2: #83A38C;
+    $green-3: #66796B;
+    $beige-1: #FCEBD8;
+    $beige-2: #ECD9C2;
+    $beige-3: #BBA893;
+    $gray-1: #E3E3E3;
+    $gray-2: #B2B2B2;
+    $gray-3: #7B7B7B;
+    $gray-4: #494949;
     $shadow: rgba(31, 31, 31, 0.75);
-    $background: #F4F4F4;
+    $background: #252525;
     $black: #000000;
     $white: #FFFFFF;
-    $green: #1db555;
+
+    $white-transparent: rgba(243, 243, 243, 0.7);
 
 // BOX-SHADOW
     $box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.30);
