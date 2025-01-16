@@ -1,2 +1,16 @@
 @use 'base/mixins' as m;
 @use 'base/variables' as v;
+
+.contact {
+    background-color: v.$gray-1;
+
+    &__grid {
+        display: flex;
+        align-items: center;
+
+        @include m.phone {
+            flex-direction: column;
+        }
+    }
+
+}
