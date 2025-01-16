@@ -28,14 +28,15 @@
 
 @mixin boton($bgColor, $colorTexto) {
     background-color: $bgColor;
-    padding: 1rem 4rem;
+    padding: 1rem 2rem;
     color: $colorTexto;
     /* margin-top: 2rem;
     font-size: 2.2rem; */
     border-radius: 2rem;
     box-shadow: v.$box-shadow;
     display: inline-block;
-    font-weight: 700;
+    font-weight: 600;
+    font-size: 1.5rem;
     text-align: center;
     text-transform: uppercase;
     transition: all 200ms;

@@ -24,6 +24,7 @@
     &__line {
         width: 10rem;
         height: .5rem;
+        border-radius: 1rem;
         background-color: v.$yellow-2;
     }
 
@@ -59,6 +60,7 @@
         &-line {
             width: 20%;
             height: .5rem;
+            border-radius: 1rem;
             background-color: v.$yellow-2;
         }
 
