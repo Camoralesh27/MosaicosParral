@@ -23,8 +23,11 @@
         }
     }
 
-    &__info-email,
+    &__info-location,
     &__info-phone {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
 
         & i {
             color: v.$yellow-2;

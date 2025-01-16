@@ -3,7 +3,7 @@
 
 .features {
     background-color: v.$gray-1;
-    padding: 5rem 0;
+    padding: 4rem 0;
 
     &__grid {
         display: grid;
@@ -19,9 +19,8 @@
 }
 
 .feature {
-    padding: 2rem;
     border-radius: 0.5rem;
-    
+    gap: .5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,7 +32,11 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
         &-img {
-            width: 10rem;
+            width: 7rem;
+
+            @include m.phone {
+                width: 7rem;
+            }
         }
     }
 
@@ -41,10 +44,12 @@
         font-size: v.$h3-font-size;
         margin-top: 1rem;
         text-align: center;
+        line-height: 4rem;
     }
 
     &__text {
         margin-top: 1rem;
         text-align: center;
+        line-height: 3rem;
     }
 }

@@ -3,14 +3,92 @@
 
 .contact {
     background-color: v.$gray-1;
+    padding: 4rem 0;
 
     &__grid {
         display: flex;
         align-items: center;
+        justify-content: center;
+        gap: 4rem;
+        width: 90%;
+        margin: 0 auto;
 
         @include m.phone {
             flex-direction: column;
         }
     }
+
+    &__data {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+
+        @include m.phone {
+            gap: 2rem;
+            grid-template-columns: 1fr;
+        }
+
+        &-text {
+            padding-left: 1.5rem;
+        }
+    }
+
+    &__redes-sociales {
+
+        &-grid {
+            display: flex;
+            gap: 2rem;
+            text-align: center;
+            padding-left: 1.5rem;
+        }
+        
+        &-link {
+            color: v.$green-2;
+            font-size: 4rem;
+            transition: all 200ms;
+
+            &:hover {
+                color: v.$green-3;
+            }
+        }
+    }
+
+    &__table {
+        width: 100%;
+        text-align: center;
+        border-collapse: collapse;
+
+
+
+        & td {
+            padding: 1rem;
+        }
+
+        &-head {
+            background-color: #d1d1d1
+        }
+
+        &-closed {
+            
+        }
+    }
+
+
+    &__map {
+        & iframe {
+            width: 60rem;
+            height: 45rem;
+            
+            border: none;
+            border-radius: 2rem;
+            box-shadow: v.$box-shadow;
+
+            @include m.phone {
+                width: 35rem;
+            }
+        }
+    }
+
+
 
 }

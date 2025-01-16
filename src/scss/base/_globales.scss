@@ -51,7 +51,7 @@ ul {
 
 a {
     text-decoration: none;
-    color: v.$white;
+    color: v.$black;
 }
 
 img,
@@ -89,3 +89,22 @@ fieldset {
     width: 100%;
 }
 
+[class$="__line"] {
+    width: 10rem;
+    height: .5rem;
+    border-radius: 1rem;
+    background-color: v.$yellow-2;
+    margin: 1.5rem auto;
+    
+}
+
+[class$="__heading"] {
+    font-size: v.$h2-font-size;
+    color: v.$green-3;
+    text-transform: uppercase;
+    text-align: center;
+
+    @include m.phone {
+        font-size: v.$h2-font-size-mobile;
+    }
+}

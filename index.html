@@ -30,9 +30,9 @@
     <header class="header" id="inicio">
         <!-- header -->
         <div class="header__info">
-            <div class="header__info-email">
+            <div class="header__info-location">
                 <i class="fa-solid fa-location-dot"></i>
-                <a class="header__info-email-text" href="mailto:contacto@tuahorrosolar.com">Boulevard y Zaragoza, Cd. Parral</a>
+                <p class="header__info-location-text" >Boulevard y Zaragoza, Cd. Parral</p>
             </div>
 
             <div class="header__info-phone">
@@ -54,7 +54,7 @@
 
         <ul class="nav__links">
             <li class="nav__links-item"><a href="#inicio" class="nav__links-link">Inicio</a></li>
-            <li class="nav__links-item"><a href="#nosotros" class="nav__links-link">Productos</a></li>
+            <li class="nav__links-item"><a href="#productos" class="nav__links-link">Productos</a></li>
             <li class="nav__links-item"><a href="#testimoniales" class="nav__links-link">Testimoniales</a></li>
             <li class="nav__links-item"><a href="#contacto" class="nav__links-link">Contacto</a></li>
         </ul>
@@ -184,9 +184,12 @@
 
     <!-- ======= testimoniales ======= -->
     <section class="testimoniales" id="testimoniales">
-        <h2 class="testimoniales__title">Lo que nuestros clientes dicen</h2>
+        <div class="testimoniales__box">
+            <h2 class="testimoniales__heading">Lo que nuestros clientes dicen</h2>
 
-        <div class="testimoniales__line"></div>
+            <div class="testimoniales__line"></div>
+        </div>
+        
 
         <div class="testimoniales__grid contenedor">
             <div class="testimoniales__item">
@@ -261,17 +264,67 @@
     </section>
 
 
-    <!-- ======= contact ======= -->
+    <!-- ======= contacto ======= -->
+    <section class="contact" id="contacto">
+        <h2 class="contact__heading">Contacto</h2>
 
+        <div class="contact__line"></div>
 
-    <section class="contact">
         <div class="contact__grid">
-            <div class="contact__data">
 
+            
+            <div class="contact__data">
+                <div class="contact__data-box">
+                    <h3 class="contact__data-title">Ubicación.</h3>
+                    <p class="contact__data-text">Boulevard y Zaragoza, Cd. Parral</p>
+                </div>
+
+                <div class="contact__data-box">
+                    <h3 class="contact__data-title">Telefono.</h3>
+                    <p class="contact__data-text"><a class="contact__data-phone-number" href="tel: +52 (627)-522-00-47"> 627 522 00 47</a></p>
+                </div>
+
+                <div class="contact__data-box">
+                    <h3 class="contact__data-title">Redes Sociales.</h3>
+
+                    <div class="contact__redes-sociales-grid">
+                        <a class="contact__redes-sociales-link" href="https://web.facebook.com/mosaicos.parral" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                        
+                        <a class="contact__redes-sociales-link" href="https://www.instagram.com/mosaicosparral" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact__data-box">
+                    <h3 class="contact__data-title">Horarios.</h3>
+                    
+                    <table class="contact__table" border="1"> 
+                        <thead>
+                          <tr class="contact__table-head">
+                            <th>Día</th>
+                            <th>Horario</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Lunes - Viernes</td>
+                            <td>08:30 - 13:00 <br>15:00 - 19:00 </td>
+                          </tr>
+                          <tr>
+                            <td>Sábado</td>
+                            <td>09:00 - 14:00 </td>
+                          </tr>
+                          <tr class="contact__table-closed">
+                            <td>Domingo</td>
+                            <td>Cerrado</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      
+                </div>
             </div>
 
             <div class="contact__map">
-                
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d915.3800448666985!2d-105.66447914429484!3d26.926215015756952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8694514a7a69c8a3%3A0x5dc7f05817ab29d1!2sMOSAICOS%20PARRAL!5e0!3m2!1ses-419!2smx!4v1737058942324!5m2!1ses-419!2smx" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
         </div>
@@ -280,7 +333,9 @@
 
     <!-- ======= footer ======= -->
     <footer class="footer">
-        Todos los derechos reservados © 2024 | Hecho por Cris.coding
+        <div class="footer__text">
+            Todos los derechos reservados © 2024 | Hecho por Cris.coding
+        </div>
     </footer>
 
     <!-- ==== main JS ==== -->

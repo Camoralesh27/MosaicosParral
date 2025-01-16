@@ -6,4 +6,10 @@
     padding: 1rem 0;
     color: v.$white;
     text-align: center;
+
+    &__text {
+        width: 90%;
+        margin: 0 auto;
+    }
+    
 }
