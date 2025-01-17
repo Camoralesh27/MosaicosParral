@@ -54,22 +54,30 @@
     }
 
     &__table {
-        width: 100%;
         text-align: center;
         border-collapse: collapse;
-
-
-
-        & td {
-            padding: 1rem;
+        border: hidden;
+        
+        &-box {
+            overflow: hidden;
+            width: fit-content;
+            border-radius: 1rem;
+            border: 1px solid v.$gray-3;
+            box-shadow: v.$box-shadow;
         }
 
-        &-head {
-            background-color: #d1d1d1
+        & th {
+            background-color: v.$green-3;
+            color: v.$gray-1;
         }
 
-        &-closed {
-            
+        & th, & td {
+            border-bottom: 1px solid v.$gray-2;
+            padding: .5rem .7rem;
+        }
+
+        &-day {
+            font-weight: 500;
         }
     }
 
@@ -84,7 +92,7 @@
             box-shadow: v.$box-shadow;
 
             @include m.phone {
-                width: 35rem;
+                width: 30rem;
             }
         }
     }
