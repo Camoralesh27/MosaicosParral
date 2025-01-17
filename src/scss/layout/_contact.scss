@@ -16,6 +16,10 @@
         @include m.phone {
             flex-direction: column;
         }
+
+        @include m.tablet {
+            flex-direction: column;
+        }
     }
 
     &__data {

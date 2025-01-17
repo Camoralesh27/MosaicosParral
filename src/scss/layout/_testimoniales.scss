@@ -17,6 +17,10 @@
         @include m.phone {
             grid-template-columns: 1fr;
         }
+
+        @include m.tablet {
+            grid-template-columns:  1fr;
+        }
     }
 
     &__item {
