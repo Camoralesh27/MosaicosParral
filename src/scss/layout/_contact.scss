@@ -71,7 +71,8 @@
             color: v.$gray-1;
         }
 
-        & th, & td {
+        & th, 
+        & td {
             border-bottom: 1px solid v.$gray-2;
             padding: .5rem .7rem;
         }
