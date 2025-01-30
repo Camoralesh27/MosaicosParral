@@ -38,6 +38,10 @@
         padding: 1rem;
         width: 50%;
 
+        @include m.phone {
+            width: 90%;
+            padding: 0;
+        }
     }
 
     &__title, 
@@ -49,5 +53,10 @@
         font-size: v.$h1-font-size;
         font-weight: 700;
         line-height: 1;
+        
+        @include m.phone {
+            font-size: v.$h1-font-size-mobile;
+            
+        }
     }
 }
