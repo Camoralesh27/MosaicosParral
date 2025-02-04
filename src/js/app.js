@@ -21,3 +21,28 @@ const showMenu = (toggleId, navId) => {
 };
 
 showMenu('navM-toggle', 'navM-menu');
+
+
+
+
+/*======= TIMER EN BOTON DE DESCARGA PDF =======*/
+document.addEventListener("DOMContentLoaded", function () {
+    const botones = document.querySelectorAll(".catalogo__boton");
+
+    botones.forEach(boton => {
+        boton.addEventListener("click", function () {
+
+            // Deshabilitar el botón y cambiar el texto
+            boton.disabled = true;
+            boton.classList.add("catalogo__boton--disabled");
+            boton.textContent = "Espera 15s...";
+
+            // Reactivar el botón después de 5 segundos
+            setTimeout(() => {
+                boton.disabled = false;
+                boton.classList.remove("catalogo__boton--disabled");
+                boton.textContent = "Descargar Catálogo📥";
+            }, 15000);
+        });
+    });
+});

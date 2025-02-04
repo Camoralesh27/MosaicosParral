@@ -69,6 +69,10 @@
     @include m.phone {
         display: none;
     }
+
+    @include m.tablet {
+        display: none;
+    }
     
 
     &__logo {
@@ -132,6 +136,16 @@
     display: none;
 
     @include m.phone {
+        display: block;
+        box-shadow: v.$box-shadow;
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        background-color: v.$white-transparent;
+    }
+
+    @include m.tablet {
         display: block;
         box-shadow: v.$box-shadow;
         position: sticky;

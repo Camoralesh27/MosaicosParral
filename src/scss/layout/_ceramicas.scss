@@ -1,0 +1,203 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.tipos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 4rem 0;
+
+    &__title {
+        font-size: v.$h3-font-size;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+        line-height: 4rem;
+        color: v.$green-3;
+        text-transform: uppercase;
+    }
+
+    &__aviso {
+        font-size: v.$normal-font-size;
+        text-align: center;
+        line-height: 2rem;
+        color: v.$gray-3;
+        font-style: italic;
+    }
+
+    &__formatos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 2rem;
+
+        &-title {
+            font-size: v.$h4-font-size;
+            text-align: center;
+            margin: 0 auto;
+            line-height: 3rem;
+            color: v.$green-3;
+            text-transform: uppercase;
+        }
+
+        & img {
+            padding: 1rem;
+            max-width: 80rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__tipologia-title {
+        font-size: v.$h4-font-size;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+        line-height: 2rem;
+        color: v.$green-3;
+        text-transform: uppercase;
+    }
+}
+
+.tipo {
+    background-color: v.$gray-1;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    transition: all 0.3s;
+
+    &:hover {
+    background-color: v.$gray-3;
+    color: v.$white;
+    }
+}
+
+.catalogos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: v.$white-2;
+    padding: 3rem;
+    
+    &__title {
+        font-size: v.$h4-font-size;
+        text-align: center;
+        color: v.$green-3;
+        text-transform: uppercase;
+        line-height: 2rem;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        max-width: 90rem;
+        margin: auto;
+    }
+
+    &__texto {
+        text-align: center;
+    }
+
+    &__aviso {
+        font-size: v.$normal-font-size;
+        text-align: center;
+        line-height: 2rem;
+        color: v.$gray-3;
+        font-style: italic;
+    }
+}
+
+.catalogo {
+    width: 25rem;
+    margin: 2rem auto;
+    background-color: v.$white;
+    padding: 15px;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* Elemento: Imagen del catálogo */
+.catalogo__imagen {
+    width: 100%;
+    border-radius: .5rem;
+}
+/* Elemento: Botón de descarga */
+.catalogo__boton {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 1rem 2rem;
+    width: 100%;
+    background: v.$green-2;
+    color: white;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: bold;
+    border-radius: .5rem;
+    transition: background 0.3s;
+    text-align: center;
+}
+/* Modificador: Estado hover del botón */
+.catalogo__boton--hover:hover {
+    background: v.$green-3;
+}
+
+.catalogo__boton--disabled {
+    background: gray;
+    cursor: not-allowed;
+    opacity: .5;
+    pointer-events: none;   
+}
+
+
+
+
+
+/* ceramica */
+
+.tipos__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    gap: 2rem;
+    max-width: 90rem;
+    width: 100%;
+}
+
+.ceramica-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out; 
+    position: relative;
+
+    &:hover {
+        transform: translateY(-.5rem);
+    }
+
+    &__imagen {
+        width: 100%;
+        height: 22rem;
+        object-fit: cover;
+    }
+
+    &__contenido {
+        padding: 1rem 0;
+        text-align: center;
+        position: absolute;
+        background-color: v.$white-transparent;
+        width: 100%;
+        bottom: 0;
+    }
+
+    &__titulo {
+        font-size: 1.9rem;
+        font-weight: bold;
+        color: v.$black;
+    }
+}
+
