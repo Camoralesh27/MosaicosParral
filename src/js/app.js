@@ -46,3 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+/*======= Actualizar año footer =======*/
+document.getElementById("year").textContent = new Date().getFullYear();
